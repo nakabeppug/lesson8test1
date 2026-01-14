@@ -42,14 +42,7 @@ if not DATABASE_URL:
     pass
 
 # SQLAlchemy エンジン（DB 接続）
-engine = (
-    create_engine(
-        DATABASE_URL.replace("postgresql://", "postgresql+psycopg://", 1),
-        pool_pre_ping=True
-    )
-    if DATABASE_URL
-    else None
-)
+engine = create_engine(DATABASE_URL, pool_pre_ping=True) if DATABASE_URL else None
 
 # ==============================
 # モデル定義
