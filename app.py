@@ -28,11 +28,11 @@ load_dotenv()  # ローカル実行時のみ有効（Render 本番では不要�
 def get_database_url() -> Optional[str]:
     """
     DATABASE_URL を取得し、Render の "postgres://" を SQLAlchemy 用に
-    "postgresql+psycopg2://" へ置換する。
+    "postgresql+psycopg://" へ置換する。
     """
     url = os.environ.get("DATABASE_URL")
     if url and url.startswith("postgres://"):
-        url = url.replace("postgres://", "postgresql+psycopg2://", 1)
+        url = url.replace("postgres://", "postgresql+psycopg://", 1)
     return url
 
 DATABASE_URL = get_database_url()
