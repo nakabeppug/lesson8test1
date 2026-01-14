@@ -5,7 +5,7 @@
 ## 技術スタック
 - Flask==3.0.3
 - SQLAlchemy==2.0.36
-- psycopg2-binary==2.9.9
+- psycopg[binary]==3.3.2
 - python-dotenv==1.0.1
 - （任意）gunicorn==22.0.0
 
